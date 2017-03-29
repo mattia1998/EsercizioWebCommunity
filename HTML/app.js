@@ -1,17 +1,18 @@
 $(document).ready(function() {
 
+  //Bottone che mostra il Form per registrarsi
   $("#btnRegistrati").click(function() {
-    var form = $('<form class="form-inline" id="formRegistrazione"><label for="nome">Nome:  </label></form>');
-    form.append('<input type="text" placeholder="Nome" id="nome" name="nome">');
-    form.append('<br><br>');
-    form.append('<label for="username">Username:  </label>');
-    form.append('<input type="text" placeholder="Username" id="username" name="username">');
-    form.append('<br><br>');
-    form.append('<label for="password">Password:  </label>');
-    form.append('<input type="password" placeholder="Password" id="password" name="password">');
-    form.append('<br><br>');
-    form.append('<label for="provincia">Provincia :</label>');
-    form.append('<br><br>');
+    var form_registrazione = $('<form class="form-inline" id="formRegistrazione"><label for="nome">Nome:  </label></form>');
+    form_registrazione.append('<input type="text" placeholder="Nome" id="nome" name="nome">');
+    form_registrazione.append('<br><br>');
+    form_registrazione.append('<label for="username">Username:  </label>');
+    form_registrazione.append('<input type="text" placeholder="Username" id="username" name="username">');
+    form_registrazione.append('<br><br>');
+    form_registrazione.append('<label for="password">Password:  </label>');
+    form_registrazione.append('<input type="password" placeholder="Password" id="password" name="password">');
+    form_registrazione.append('<br><br>');
+    form_registrazione.append('<label for="provincia">Provincia :</label>');
+    form_registrazione.append('<br><br>');
     var select = $('<select id="provincia" name="provincia"></select>');
     select.append('<option value="ag">Agrigento</option>');
     select.append('<option value="al">Alessandria</option>');
@@ -123,15 +124,27 @@ $(document).ready(function() {
     select.append('<option value="vv">Vibo valentia</option>');
     select.append('<option value="vi">Vicenza</option>');
     select.append('<option value="vt">Viterbo</option>');
-    form.append(select);
-    form.append('<br><br>');
-    form.append('<button type="submit" class="btn btn-primary" name="btnInviaReg">Invia</button>');
-    $("#contentForm").empty().append(form);
+    form_registrazione.append(select);
+    form_registrazione.append('<br><br>');
+    form_registrazione.append('<button type="submit" class="btn btn-primary" name="btnInviaReg">Invia</button>');
+    $("#contentForm").empty().append(form_registrazione);
   });
-
+  
+  //Bottone per invio dei dati della registrazione
   $("#btnInviaReg").click(function() {
     $("#formRegistrazione").hide();
   })
-
+  
+  //Bottone che mostra il form per il log in
+  $("#btnLog_In").click(function(){
+    var form_log_in = $('<form class="form-inline" id="formLog_In"><label for="nome">Username:  </label></form>');
+    form_log_in.append('<input type="text" placeholder="Username" id="username" name="username">');
+    form_log_in.append('<br><br>');
+    form_log_in.append('<label for="password">Password:  </label>');
+    form_log_in.append('<input type="password" placeholder="Password" id="password_log" name="password_log">');
+    form_log_in.append('<br><br>');
+    form_log_in.append('<button type="submit" class="btn btn-primary" name="btnInviaLog_In">Accedi</button>');
+    $("#contentForm").empty().append(form_log_in);
+  });
 
 });
