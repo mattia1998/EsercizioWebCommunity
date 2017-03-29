@@ -2,14 +2,17 @@ $(document).ready(function() {
 
   //Bottone che mostra il Form per registrarsi
   $("#btnRegistrati").click(function() {
-    var form_registrazione = $('<form class="form-inline" id="formRegistrazione"><label for="nome">Nome:  </label></form>');
+    var form_registrazione = $('<form class="form-inline" id="formRegistrazione" method="POST" action=""><label for="nome">Nome:  </label></form>');
     form_registrazione.append('<input type="text" placeholder="Nome" id="nome" name="nome">');
     form_registrazione.append('<br><br>');
-    form_registrazione.append('<label for="username">Username:  </label>');
+    form_registrazione.append('<label for="username">Username:</label>');
     form_registrazione.append('<input type="text" placeholder="Username" id="username" name="username">');
     form_registrazione.append('<br><br>');
     form_registrazione.append('<label for="password">Password:  </label>');
     form_registrazione.append('<input type="password" placeholder="Password" id="password" name="password">');
+    form_registrazione.append('<br><br>');
+    form_registrazione.append('<label for="luogo">Luogo:  </label>');
+    form_registrazione.append('<input type="luogo" placeholder="Luogo" id="luogo" name="luogo">');
     form_registrazione.append('<br><br>');
     form_registrazione.append('<label for="provincia">Provincia :</label>');
     form_registrazione.append('<br><br>');
